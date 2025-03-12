@@ -1,0 +1,44 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Dashboard de Servidores</h2>
+  
+    <!-- Tarjetas de Estadísticas -->
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card text-white bg-primary shadow mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Total de Servidores</h5>
+            <p class="fs-2">{{ totalServers }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-white bg-success shadow mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Servidores Activos</h5>
+            <p class="fs-2">{{ activeServers }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-white bg-danger shadow mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Servidores Inactivos</h5>
+            <p class="fs-2">{{ inactiveServers }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Gráfica de distribución de sistemas operativos -->
+    <div class="row mt-4">
+      <div class="col-md-8 offset-md-2">
+        <div class="card shadow">
+          <div class="card-body">
+            <h5 class="text-center">Distribución de Sistemas Operativos</h5>
+            <canvas id="osChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
