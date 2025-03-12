@@ -1,0 +1,17 @@
+
+<div class="container mt-5" *ngIf="server">
+    <h2 class="text-center">Detalles del Servidor</h2>
+    <ul class="list-group">
+      <li class="list-group-item"><strong>Nombre:</strong> {{ server.name }}</li>
+      <li class="list-group-item"><strong>Sistema Operativo:</strong> {{ server.os }}</li>
+      <li class="list-group-item"><strong>RAM:</strong> {{ server.ram }} GB</li>
+      <li class="list-group-item"><strong>Capacidad de Disco:</strong> {{ server.disk_capacity }}</li>
+      <li class="list-group-item">
+        <strong>Estado:</strong>
+        <span [ngClass]="{'text-success': server.status === 'Activo', 'text-danger': server.status === 'Inactivo'}">
+          {{ server.status }}
+        </span>
+      </li>
+    </ul>
+  </div>
+  

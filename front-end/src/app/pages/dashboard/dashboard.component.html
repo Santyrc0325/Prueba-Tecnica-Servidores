@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <h2>Resumen del Dashboard</h2>
+
+  <div class="card-container">
+    <div class="card">
+      <h3>Total de Servidores</h3>
+      <p>{{ totalServers }}</p>
+    </div>
+
+    <div class="card">
+      <h3>Servidores Activos</h3>
+      <p>{{ activeServers }}</p>
+    </div>
+  </div>
+
+  <h3>Distribución por Sistema Operativo</h3>
+  <canvas id="osChart"></canvas>
+</div>
