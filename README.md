@@ -21,7 +21,7 @@ Este proyecto permite gestionar servidores (crear, editar, eliminar y ver detall
 
 1. **Clona o descarga** este repositorio.
 2. Ubícate en la carpeta del backend:
-   ```bash
+   ```
    cd backend
 
 Instala las dependencias:
@@ -33,65 +33,70 @@ Configura tu base de datos en MySQL:
 Crea una base de datos, por ejemplo, servers_db.
 Asegúrate de que las tablas users y servers estén definidas según tus necesidades. Puedes utilizar el siguiente SQL para crearlas:
 
-CREATE TABLE users (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  username VARCHAR(255) NOT NULL UNIQUE,
-  password VARCHAR(255) NOT NULL
-);
+ CREATE TABLE users (
+   id INT AUTO_INCREMENT PRIMARY KEY,
+   username VARCHAR(255) NOT NULL UNIQUE,
+   password VARCHAR(255) NOT NULL
+ );
 
-CREATE TABLE servers (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(255) NOT NULL,
-  os VARCHAR(255) NOT NULL,
-  ram INT NOT NULL,
-  disk_capacity VARCHAR(255) NOT NULL,
-  ip_address VARCHAR(255) NOT NULL,
-  status VARCHAR(255) NOT NULL
-);
+ CREATE TABLE servers (
+   id INT AUTO_INCREMENT PRIMARY KEY,
+   name VARCHAR(255) NOT NULL,
+   os VARCHAR(255) NOT NULL,
+   ram INT NOT NULL,
+   disk_capacity VARCHAR(255) NOT NULL,
+   ip_address VARCHAR(255) NOT NULL,
+   status VARCHAR(255) NOT NULL
+ );
+
 Crea un archivo .env en la raíz del backend y añade:
 
-PORT=3030
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=
-DB_NAME=servers_db
-JWT_SECRET=un_secreto_seguro
+ PORT=3030
+ DB_HOST=localhost
+ DB_USER=root
+ DB_PASSWORD=
+ DB_NAME=servers_db
+ JWT_SECRET=un_secreto_seguro
+
 Ejecuta el servidor:
 
+  npm start
 
-npm start
 El servidor se iniciará en http://localhost:3030 (o en el puerto definido en el archivo .env).
 
 # 3. Configuración del Frontend (Angular)
 Desde la raíz del proyecto, ubícate en la carpeta del frontend:
 
+  cd front-end
 
-cd front-end
 Instala las dependencias:
 
+  npm install
 
-npm install
 Instala Bootstrap:
 
+  npm install bootstrap
 
-npm install bootstrap
 Luego, abre angular.json y en la sección "styles" agrega:
 
 
-"styles": [
-  "node_modules/bootstrap/dist/css/bootstrap.min.css",
-  "src/styles.css"
-]
+  "styles": [
+    "node_modules/bootstrap/dist/css/bootstrap.min.css",
+    "src/styles.css"
+  ]
+  
 Configura la URL del backend en los servicios. Abre los archivos:
 
 src/app/services/auth.service.ts y asegúrate de que:
 
 private apiUrl = 'http://localhost:3030/api/auth';
+
 src/app/services/server.service.ts y asegúrate de que:
 
 private apiUrl = 'http://localhost:3030/api/servers';
+
 Inicia la aplicación:
 
-
 ng serve --open
+
 La aplicación se abrirá en http://localhost:4200 por defecto.
