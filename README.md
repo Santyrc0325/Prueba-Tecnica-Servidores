@@ -77,9 +77,7 @@ Instala Bootstrap:
 npm install bootstrap
 Luego, abre angular.json y en la sección "styles" agrega:
 
-json
-Copiar
-Editar
+
 "styles": [
   "node_modules/bootstrap/dist/css/bootstrap.min.css",
   "src/styles.css"
@@ -87,19 +85,13 @@ Editar
 Configura la URL del backend en los servicios. Abre los archivos:
 
 src/app/services/auth.service.ts y asegúrate de que:
-typescript
-Copiar
-Editar
+
 private apiUrl = 'http://localhost:3030/api/auth';
 src/app/services/server.service.ts y asegúrate de que:
-typescript
-Copiar
-Editar
+
 private apiUrl = 'http://localhost:3030/api/servers';
 Inicia la aplicación:
 
-bash
-Copiar
-Editar
+
 ng serve --open
 La aplicación se abrirá en http://localhost:4200 por defecto.
