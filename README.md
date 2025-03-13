@@ -24,13 +24,14 @@ Este proyecto permite gestionar servidores (crear, editar, eliminar y ver detall
    ```
    cd backend
 
-Instala las dependencias:
+##Instala las dependencias:
 
 npm install
 
-Configura tu base de datos en MySQL:
 
-Crea una base de datos, por ejemplo, servers_db.
+#Configura tu base de datos en MySQL:
+
+##Crea una base de datos, por ejemplo, servers_db.
 Asegúrate de que las tablas users y servers estén definidas según tus necesidades. Puedes utilizar el siguiente SQL para crearlas:
 
  CREATE TABLE users (
@@ -49,7 +50,7 @@ Asegúrate de que las tablas users y servers estén definidas según tus necesid
    status VARCHAR(255) NOT NULL
  );
 
-Crea un archivo .env en la raíz del backend y añade:
+##Crea un archivo .env en la raíz del backend y añade:
 
  PORT=3030
  DB_HOST=localhost
@@ -58,26 +59,26 @@ Crea un archivo .env en la raíz del backend y añade:
  DB_NAME=servers_db
  JWT_SECRET=un_secreto_seguro
 
-Ejecuta el servidor:
+##Ejecuta el servidor:
 
   npm start
 
-El servidor se iniciará en http://localhost:3030 (o en el puerto definido en el archivo .env).
+##El servidor se iniciará en http://localhost:3030 (o en el puerto definido en el archivo .env).
 
 # 3. Configuración del Frontend (Angular)
 Desde la raíz del proyecto, ubícate en la carpeta del frontend:
 
   cd front-end
 
-Instala las dependencias:
+##Instala las dependencias:
 
   npm install
 
-Instala Bootstrap:
+##Instala Bootstrap:
 
   npm install bootstrap
 
-Luego, abre angular.json y en la sección "styles" agrega:
+##Luego, abre angular.json y en la sección "styles" agrega:
 
 
   "styles": [
@@ -85,7 +86,7 @@ Luego, abre angular.json y en la sección "styles" agrega:
     "src/styles.css"
   ]
   
-Configura la URL del backend en los servicios. Abre los archivos:
+##Configura la URL del backend en los servicios. Abre los archivos:
 
 src/app/services/auth.service.ts y asegúrate de que:
 
@@ -95,7 +96,7 @@ src/app/services/server.service.ts y asegúrate de que:
 
 private apiUrl = 'http://localhost:3030/api/servers';
 
-Inicia la aplicación:
+##Inicia la aplicación:
 
 ng serve --open
 
